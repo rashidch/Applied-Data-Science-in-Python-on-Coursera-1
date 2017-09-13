@@ -1,0 +1,19 @@
+def answer_six():
+    df = census_df
+    slev_c = df[df['SUMLEV']==50]
+    slev_c.set_index('STNAME',inplace=True)
+    county_pop= list()
+    state_df= pd.DataFrame()
+    state_df['State']=df['STNAME'].unique()
+    state_df['Top3P']=0
+    state_df.set_index('State',inplace=True)
+    for st in state_df.index:
+        county_pop = slev_c.loc[st,'CENSUS2010POP']
+        if type(county_pop)== pd.Series:
+            sum_st = sum(county_pop)
+        else:
+            
+            sum_st
+        state_df['Top3P'].loc[st]=sum_st
+    return state_df.sort_values('Top3P',ascending=False).index[:3].tolist()
+answer_six()

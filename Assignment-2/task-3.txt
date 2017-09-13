@@ -1,0 +1,35 @@
+def answer_three():
+    store_summer=[]
+    store_winter=[]
+    diff=0
+    diff_rel=0
+    tol=0
+    country= ' '
+    country= ' '
+    diff_dict = {}
+    tol_dict = {}
+    df_gold= df[df['Gold'] & df['Gold.1']>0]
+    store_summer= df_gold['Gold']
+    store_winter= df_gold['Gold.1']
+    #print(store_summer, '\n\n\n\n\n\n',store_winter)
+    for key, value in store_summer.items():
+        for k,v in store_winter.items():
+            if key==k:
+                diff= value-v
+                diff_dict[key]= diff
+                tol = value+v
+                tol_dict[key]= tol
+    #print(diff_dict,'\n\n\n\n\n')
+    #print(tol_dict)
+    for key1,value1 in diff_dict.items():
+        for k1, v1 in tol_dict.items():
+            #print(k1,v1)
+            if key1==k1:
+                d1 = value1/v1
+                if d1>diff_rel:
+                    diff_rel=d1
+                    country2=key1
+                    print('The country which has the biggest relative difference medal counts:',country2,':',diff_rel) 
+                    
+    return country2
+answer_three()

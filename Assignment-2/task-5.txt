@@ -1,0 +1,27 @@
+def answer_five():
+
+    columns_to_keep = ['STNAME',
+                   'CTYNAME']
+    state_df= list()
+    state_df = census_df['STNAME']
+    #print(state_df)
+    counts= dict()
+    max=0
+    state=' '
+    #uniq_states= df['STNAME'].unique()
+    #print(uniq_states)
+    for key,value in state_df.items():
+        #print(value)
+        if value not in counts:
+            counts[value]= 1
+        else:
+            counts[value]= counts[value]+1
+    for k, v in counts.items():
+        print(k,v)
+        if v>max:
+            max=v
+            state=k
+    
+    print('State which has the most counties in it:',state,max)   
+    return state
+answer_five()

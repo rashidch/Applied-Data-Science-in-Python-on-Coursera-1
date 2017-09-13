@@ -1,0 +1,21 @@
+def answer_four():
+    points = list()
+    gold2_store= list()
+    silver2_store= list()
+    bronze2_store= list()
+    gold2_store=   df['Gold.2']
+    silver2_store= df['Silver.2']
+    bronze2_store= df['Bronze.2']
+    #print(gold2_store,'\nn\n\n\n',silver2_store,'\n\n\n\n',bronze2_store)
+    #print(len(silver2_store))
+    for key3, value3 in gold2_store.items():
+        for key4, value4 in silver2_store.items():
+            for key5, value5 in bronze2_store.items():
+                if key3==key4==key5:
+                    sum1=(value3)*3+(value4)*2+(value5)*1
+                    points.append(sum1)
+                    
+                    
+        
+    return pd.Series(points)
+answer_four()

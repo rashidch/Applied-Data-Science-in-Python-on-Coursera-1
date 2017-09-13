@@ -1,0 +1,15 @@
+def answer_one():
+    store= []
+    max=0
+    country= ' '
+    store= df['Gold']
+    for key, value in store.items():
+        #print (key, value)
+        if value>max:
+            max=value
+            country=key
+            print('The new maximum value is:',max )
+    
+    return max
+    
+answer_one()

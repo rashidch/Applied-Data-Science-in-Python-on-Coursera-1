@@ -1,0 +1,16 @@
+def answer_seven():
+    pop_df =census_df.loc[:,'POPESTIMATE2010':'POPESTIMATE2015']
+    pch_df= pd.DataFrame()
+    pch_df['CTYNAME']=census_df['CTYNAME']
+    pch_df['SUB']=0
+    for i in pop_df.index:
+        list_pop = pop_df.loc[i, :]
+        print(list_pop)
+        a=list_pop.sort_values(ascending=True)[0]
+        b=list_pop.sort_values(ascending=True)[-1]
+        sub = abs(a-b)
+        pch_df['SUB'].iloc[i]=sub
+    pch_df =pch_df.sort_values('SUB', ascending=False)
+    ans= pch_df.iloc[0]['CTYNAME']
+    return ans
+answer_seven()

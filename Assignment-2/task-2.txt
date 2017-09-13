@@ -1,0 +1,19 @@
+def answer_two():
+    store_summer=[]
+    store_winter=[]
+    diff=0
+    country= ' '
+    store_summer= df['Gold']
+    store_winter= df['Gold.1']
+    for key, value in store_summer.items():
+        for k, v in store_winter.items():
+            if key==k:
+                d = value-v
+                if d> diff:
+                    diff=d
+                    country=key
+                    print(' The country which had biggest difference between their summer and winter gold medal counts:',country,':',diff)
+                
+    
+    return country
+answer_two()
