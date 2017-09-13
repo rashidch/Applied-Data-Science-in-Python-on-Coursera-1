@@ -1,5 +1,5 @@
 # Applied-Data-Science-in-Python-on-Coursera
-# Practical sessions topics (Pandas and Numpy)  
+# Practical session topics (Pandas and Numpy)  
 
 1. The Python Programming Language: Functions
 2. The Python Programming Language: Types and Sequences
